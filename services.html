@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Permanent Marker', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(7px);
+            box-shadow: 0 8px 32px rgb(0, 0, 0);
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #00d7e6;
+            text-shadow: 0 0 15px #000000, 0 0 30px #00e6e6;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.973);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.678);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.932);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(126, 243, 233, 0.911);
+        }
+
+        .service-card i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .service-card:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Icon Colors */
+        .service-card.design i {
+            color: #c44ff1c0; /* Blue for Design */
+        }
+
+        .service-card.seo i {
+            color: #cc57f0c4; /* Green for SEO */
+        }
+
+        .service-card.cloud i {
+            color: #c13dd3ad; /* Cyan for Cloud Hosting */
+        }
+
+        .service-card.domain i {
+            color: #a842c1c5; /* Purple for Domains */
+        }
+
+        .service-card.update i {
+            color: #b337e4d2; /* Yellow for Updates */
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: #00e6e6;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #cff5efef;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 2px solid #00e6e6;
+            border-radius: 8px;
+            background: transparent;
+            text-shadow: 0 0 10px #00e6e6;
+            transition: all 0.3s ease;
+            margin-top: 50px;
+        }
+
+        .btn:hover {
+            background: #00e6e6;
+            color: #000000;
+            box-shadow: 0 0 15px #00e6e6, 0 0 30px #00e6e6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="video-background" autoplay muted loop>
+        <source src="assets/videos/services-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Our Services</h1>
+            <p>Crafting innovative solutions to meet your digital needs.</p>
+        </header>
+
+        <!-- Services Section -->
+        <div class="services-container">
+            <div class="service-card design">
+                <i class="fas fa-pencil-ruler"></i>
+                <h3>Custom Web Design</h3>
+                <p>Unique designs tailored to elevate your brand.</p>
+            </div>
+            <div class="service-card seo">
+                <i class="fas fa-search"></i>
+                <h3>SEO Optimization</h3>
+                <p>Boost visibility and attract organic traffic effortlessly.</p>
+            </div>
+            <div class="service-card cloud">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Hosting</h3>
+                <p>Reliable and scalable solutions for your online presence.</p>
+            </div>
+            <div class="service-card domain">
+                <i class="fas fa-globe"></i>
+                <h3>Custom Domains</h3>
+                <p>Stand out with a unique and professional domain name.</p>
+            </div>
+            <div class="service-card update">
+                <i class="fas fa-sync-alt"></i>
+                <h3>Page Updates</h3>
+                <p>Keep your content fresh with regular updates.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>

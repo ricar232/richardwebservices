@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Permanent Marker', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.233);
+            backdrop-filter: blur(7px);
+            box-shadow: 0 8px 32px rgb(0, 0, 0);
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #00d7e6;
+            text-shadow: 0 0 15px #000000, 0 0 30px #00e6e6;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.986);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .project-card i {
+            font-size: 4rem;
+            margin: 20px 0;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Icon Colors */
+        .project-card.project1 i {
+            color: #007bff; /* Blue */
+        }
+
+        .project-card.project2 i {
+            color: #28a745; /* Green */
+        }
+
+        .project-card.project3 i {
+            color: #ffc107; /* Yellow */
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            color: #00e6e6;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 2px solid #00e6e6;
+            border-radius: 8px;
+            background: transparent;
+            text-shadow: 0 0 10px #00e6e6;
+            transition: all 0.3s ease;
+            margin-top: 50px;
+        }
+
+        .btn:hover {
+            background: #00e6e6;
+            color: #000000;
+            box-shadow: 0 0 15px #00e6e6, 0 0 30px #00e6e6;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .project-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-content p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                font-size: 1.1rem;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .project-content h3 {
+                font-size: 1rem;
+            }
+
+            .project-content p {
+                font-size: 0.8rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="video-background" autoplay muted loop>
+        <source src="assets/videos/projects-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Our Projects</h1>
+            <p>Explore our portfolio of innovative and unique web solutions.</p>
+        </header>
+
+        <!-- Projects Section -->
+        <div class="projects-container">
+            <div class="project-card project1">
+                <i class="fas fa-laptop-code"></i>
+                <div class="project-content">
+                    <h3>Project 1</h3>
+                    <p>A modern and responsive website design for a client in the tech industry.</p>
+                </div>
+            </div>
+            <div class="project-card project2">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="project-content">
+                    <h3>Project 2</h3>
+                    <p>A creative and functional e-commerce solution for a fashion brand.</p>
+                </div>
+            </div>
+            <div class="project-card project3">
+                <i class="fas fa-school"></i>
+                <div class="project-content">
+                    <h3>Project 3</h3>
+                    <p>An interactive and dynamic web platform for an educational organization.</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    video.play();
+                });
+            });
+        });
+        </script>
+        
+
+</body>
+</html>

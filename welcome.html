@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Permanent Marker', sans-serif;
+            color: #ffffff;
+            background: #000000;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.726); /* Translucent background */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.979);
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 15px #000000, 0 0 30px #00ffff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 2px solid #00ffff;
+            border-radius: 5px;
+            background: transparent;
+            text-shadow: 0 0 10px #00ffff;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn:hover {
+            background: #00ffff;
+            color: #000000;
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.562);
+            border: 1px solid rgba(255, 255, 255, 0.911);
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgb(0, 0, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(252, 252, 252, 0.767);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            .feature-card {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+
+            .feature-card {
+                width: 100%; /* Full width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="video-background" autoplay muted loop>
+        <source src="assets/videos/welcome-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome to Richard Web Services</h1>
+        <p>
+            Crafting exceptional digital experiences with modern designs, advanced animations, 
+            and responsive layouts tailored to your vision.
+        </p>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Modern Designs</h3>
+                <p>Creative and unique designs that stand out.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Responsive Layouts</h3>
+                <p>Websites optimized for all devices.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Advanced Animations</h3>
+                <p>Interactive and engaging animations for a seamless user experience.</p>
+            </div>
+        </div>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    video.play();
+                });
+            });
+        });
+        </script>
+        
+
+</body>
+</html>

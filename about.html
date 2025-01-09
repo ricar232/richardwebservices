@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Permanent Marker', sans-serif;
+            color: #333333;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            background: #f5f5f5; /* Backup color */
+        }
+
+        #video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            padding: 50px;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.801); /* Semi-transparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.445);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #0eb9e4; /* Color visible para fondo claro */
+            text-shadow: 0 0 5px #06b4d38f, 0 0 10px #23a8ddb7;
+            margin: 20px 0;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: #1bcae9e3;
+            margin: 20px 0;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .team-card {
+            background: rgba(0, 0, 0, 0.521);
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(245, 95, 220, 0.164);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(202, 14, 161, 0.507);
+        }
+
+        .team-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #ff007f;
+            margin-bottom: 5px;
+        }
+
+        .team-card p {
+            font-size: 1rem;
+            color: #07d9f5;
+            margin: 0;
+        }
+
+        .btn {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
+            background: #ff007f;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(255, 0, 127, 0.4);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #e60070;
+            box-shadow: 0 6px 15px rgba(255, 0, 127, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .team {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-card {
+                width: 90%;
+            }
+
+            .btn {
+                font-size: 1.2rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="video-background" autoplay muted loop>
+        <source src="assets/videos/about-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div class="container">
+        <header>
+            <h1>About Us</h1>
+            <p>
+                At <span class="highlight">Richard's Web Design</span>, we believe in delivering websites that are more than just functional—they are 
+                <span class="highlight">works of art</span>. Our team specializes in creating unique, visually stunning, and highly interactive experiences.
+            </p>
+        </header>
+        <div class="team">
+            <div class="team-card">
+                <img src="assets/images/richard.jpg.jpg" alt="Team Member 1">
+                <h3>Richard Mota Torres</h3>
+                <p>CEO</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/team2.jpg" alt="Team Member 2">
+                <h3>Sarah</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="assets/team3.jpg" alt="Team Member 3">
+                <h3>Michael</h3>
+                <p>UI/UX Specialist</p>
+            </div>
+        </div>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    video.play();
+                });
+            });
+        });
+        </script>
+        
+
+</body>
+</html>
