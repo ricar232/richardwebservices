@@ -31,7 +31,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centra verticalmente */
+            justify-content: center;
             padding: 20px;
             min-height: 100vh;
             box-sizing: border-box;
@@ -39,7 +39,7 @@
 
         header {
             text-align: center;
-            margin-bottom: 30px; /* Espacio inferior ajustado */
+            margin-bottom: 30px;
         }
 
         h1 {
@@ -52,7 +52,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px; /* Espaciado uniforme entre los círculos */
+            gap: 40px;
             padding: 20px;
         }
 
@@ -62,17 +62,19 @@
             flex-direction: column;
             align-items: center;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .circle img {
             border-radius: 50%;
             width: 200px;
             height: 200px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .circle img:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 230, 230, 0.8);
         }
 
         .circle-title {
@@ -80,6 +82,11 @@
             font-size: 1.8rem;
             color: #ffffff;
             text-shadow: 0 0 5px #08e8f0b4, 0 0 10px #07d3f7;
+        }
+
+        .circle:focus img {
+            outline: none;
+            box-shadow: 0 0 15px rgba(0, 230, 230, 0.8);
         }
 
         @media (max-width: 768px) {
@@ -116,7 +123,7 @@
             }
 
             #circle-container {
-                flex-direction: column; /* Círculos en una sola columna */
+                flex-direction: column;
                 gap: 10px;
             }
         }
