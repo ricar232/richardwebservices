@@ -13,12 +13,7 @@
             font-family: 'Permanent Marker', sans-serif;
             color: #ffffff;
             background: #000000;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            overflow-x: hidden; /* Evita desplazamiento horizontal */
         }
 
         #video-background {
@@ -29,6 +24,7 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
+            pointer-events: none;
         }
 
         .content {
@@ -38,6 +34,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.979);
             max-width: 800px;
+            margin: 50px auto; /* Centra el contenido */
             animation: fadeIn 1.5s ease-in-out;
         }
 
@@ -149,6 +146,7 @@
 
             p {
                 font-size: 1rem;
+                line-height: 1.5;
             }
 
             .btn {
@@ -157,7 +155,8 @@
             }
 
             .feature-card {
-                width: 100%; /* Full width for smaller screens */
+                width: calc(100% - 40px);
+                margin: 10px auto;
             }
         }
     </style>
@@ -192,19 +191,5 @@
         </div>
         <a href="index.html" class="btn">Back to Home</a>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                video.addEventListener('ended', () => {
-                    video.currentTime = 0;
-                    video.play();
-                });
-            });
-        });
-        </script>
-        
-
 </body>
 </html>

@@ -15,7 +15,7 @@
             font-family: 'Permanent Marker', sans-serif;
             color: #ffffff;
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         #video-background {
@@ -35,13 +35,9 @@
             padding: 30px;
             text-align: center;
             border-radius: 20px;
-            background: rgba(0, 0, 0, 0.233);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(7px);
-            box-shadow: 0 8px 32px rgb(0, 0, 0);
-        }
-
-        header {
-            margin-bottom: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
@@ -54,7 +50,7 @@
         header p {
             font-size: 1.5rem;
             color: #ffffff;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.986);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
         }
 
         .projects-container {
@@ -71,7 +67,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            cursor: pointer;
+            padding: 20px;
         }
 
         .project-card:hover {
@@ -85,21 +81,8 @@
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        /* Icon Colors */
-        .project-card.project1 i {
-            color: #007bff; /* Blue */
-        }
-
-        .project-card.project2 i {
-            color: #28a745; /* Green */
-        }
-
-        .project-card.project3 i {
-            color: #ffc107; /* Yellow */
-        }
-
-        .project-content {
-            padding: 20px;
+        .project-card:hover i {
+            transform: scale(1.1);
         }
 
         .project-content h3 {
@@ -143,17 +126,20 @@
                 font-size: 1.2rem;
             }
 
+            .project-card i {
+                font-size: 3rem;
+            }
+
             .project-content h3 {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
             }
 
             .project-content p {
                 font-size: 0.9rem;
             }
 
-            .btn {
-                font-size: 1.1rem;
-                padding: 10px 20px;
+            .projects-container {
+                gap: 20px;
             }
         }
 
@@ -166,37 +152,40 @@
                 font-size: 1rem;
             }
 
+            .project-card {
+                padding: 15px;
+            }
+
+            .project-card i {
+                font-size: 2.5rem;
+            }
+
             .project-content h3 {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .project-content p {
                 font-size: 0.8rem;
             }
 
-            .btn {
-                font-size: 1rem;
-                padding: 8px 16px;
+            .projects-container {
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Video -->
     <video id="video-background" autoplay muted loop>
         <source src="assets/videos/projects-background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Main Content -->
     <div class="container">
-        <!-- Header -->
         <header>
             <h1>Our Projects</h1>
             <p>Explore our portfolio of innovative and unique web solutions.</p>
         </header>
 
-        <!-- Projects Section -->
         <div class="projects-container">
             <div class="project-card project1">
                 <i class="fas fa-laptop-code"></i>
@@ -223,19 +212,5 @@
 
         <a href="index.html" class="btn">Back to Home</a>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                video.addEventListener('ended', () => {
-                    video.currentTime = 0;
-                    video.play();
-                });
-            });
-        });
-        </script>
-        
-
 </body>
 </html>

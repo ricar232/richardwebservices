@@ -31,14 +31,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
-            padding-top: 50px; /* Ajustar espacio superior */
+            justify-content: center; /* Centra verticalmente */
+            padding: 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px; /* Más espacio debajo del título */
+            margin-bottom: 30px; /* Espacio inferior ajustado */
         }
 
         h1 {
@@ -49,10 +50,10 @@
 
         #circle-container {
             display: flex;
-            gap: 40px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 250px; /* Baja los círculos aún más */
+            justify-content: center;
+            gap: 40px; /* Espaciado uniforme entre los círculos */
+            padding: 20px;
         }
 
         .circle {
@@ -60,7 +61,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            cursor: pointer; /* Indica que son interactivos */
+            cursor: pointer;
         }
 
         .circle img {
@@ -71,7 +72,7 @@
         }
 
         .circle img:hover {
-            transform: scale(1.05); /* Efecto al pasar el ratón */
+            transform: scale(1.05);
         }
 
         .circle-title {
@@ -81,39 +82,22 @@
             text-shadow: 0 0 5px #08e8f0b4, 0 0 10px #07d3f7;
         }
 
-        .circle::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 200px;
-            border: 3px solid rgba(255, 255, 255, 0);
-            border-radius: 50%;
-            animation: pulseLight 3s ease-in-out infinite;
-        }
-
-        @keyframes pulseLight {
-            0%, 100% {
-                border-color: rgba(255, 255, 255, 0);
-            }
-            50% {
-                border-color: rgba(255, 255, 255, 0.8);
-            }
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
             }
 
             .circle img {
-                width: 150px;
-                height: 150px;
+                width: 140px;
+                height: 140px;
             }
 
             .circle-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+
+            #circle-container {
+                gap: 15px;
             }
         }
 
@@ -123,12 +107,17 @@
             }
 
             .circle img {
-                width: 120px;
-                height: 120px;
+                width: 100px;
+                height: 100px;
             }
 
             .circle-title {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+
+            #circle-container {
+                flex-direction: column; /* Círculos en una sola columna */
+                gap: 10px;
             }
         }
     </style>
@@ -140,7 +129,7 @@
     </video>
     <div id="main-container">
         <header>
-            <h1>Richar Web Services</h1>
+            <h1>Richard Web Services</h1>
         </header>
         <div id="circle-container">
             <a class="circle" href="welcome.html">

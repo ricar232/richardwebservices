@@ -11,15 +11,9 @@
             margin: 0;
             padding: 0;
             font-family: 'Permanent Marker', sans-serif;
-            color: #333333;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            color: #ffffff;
             text-align: center;
-            min-height: 100vh;
-            background: #f5f5f5; /* Backup color */
+            background: #000000;
         }
 
         #video-background {
@@ -36,15 +30,15 @@
             width: 90%;
             max-width: 1000px;
             padding: 50px;
-            z-index: 1;
-            background: rgba(0, 0, 0, 0.801); /* Semi-transparente */
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparente */
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.445);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         header h1 {
             font-size: 3.5rem;
-            color: #0eb9e4; /* Color visible para fondo claro */
+            color: #0eb9e4;
             text-shadow: 0 0 5px #06b4d38f, 0 0 10px #23a8ddb7;
             margin: 20px 0;
         }
@@ -52,8 +46,8 @@
         header p {
             font-size: 1.5rem;
             line-height: 1.8;
-            color: #1bcae9e3;
-            margin: 20px 0;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         .team {
@@ -65,18 +59,18 @@
         }
 
         .team-card {
-            background: rgba(0, 0, 0, 0.521);
+            background: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             padding: 20px;
             width: 280px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(245, 95, 220, 0.164);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .team-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(202, 14, 161, 0.507);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
         }
 
         .team-card img {
@@ -94,7 +88,7 @@
 
         .team-card p {
             font-size: 1rem;
-            color: #07d9f5;
+            color: #00e6e6;
             margin: 0;
         }
 
@@ -103,7 +97,6 @@
             color: #ffffff;
             text-decoration: none;
             padding: 10px 20px;
-            border: none;
             background: #ff007f;
             border-radius: 5px;
             box-shadow: 0 4px 10px rgba(255, 0, 127, 0.4);
@@ -127,11 +120,12 @@
 
             .team {
                 flex-direction: column;
-                align-items: center;
+                gap: 15px;
             }
 
             .team-card {
-                width: 90%;
+                width: 90%; /* Ajusta al ancho del contenedor */
+                margin: 0 auto;
             }
 
             .btn {
@@ -153,6 +147,11 @@
                 font-size: 1rem;
                 padding: 6px 12px;
             }
+
+            .team-card {
+                width: 100%; /* Ocupa todo el ancho */
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -168,42 +167,28 @@
         <header>
             <h1>About Us</h1>
             <p>
-                At <span class="highlight">Richard's Web Design</span>, we believe in delivering websites that are more than just functional—they are 
-                <span class="highlight">works of art</span>. Our team specializes in creating unique, visually stunning, and highly interactive experiences.
+                At <span class="highlight">Richard's Web Design</span>, we deliver websites that are 
+                <span class="highlight">works of art</span>. Our team creates unique, stunning, and interactive experiences.
             </p>
         </header>
         <div class="team">
             <div class="team-card">
-                <img src="assets/images/richard.jpg.jpg" alt="Team Member 1">
+                <img src="assets/images/richard.jpg" alt="Richard">
                 <h3>Richard Mota Torres</h3>
                 <p>CEO</p>
             </div>
             <div class="team-card">
-                <img src="assets/team2.jpg" alt="Team Member 2">
+                <img src="assets/team2.jpg" alt="Sarah">
                 <h3>Sarah</h3>
                 <p>Frontend Developer</p>
             </div>
             <div class="team-card">
-                <img src="assets/team3.jpg" alt="Team Member 3">
+                <img src="assets/team3.jpg" alt="Michael">
                 <h3>Michael</h3>
                 <p>UI/UX Specialist</p>
             </div>
         </div>
         <a href="index.html" class="btn">Back to Home</a>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                video.addEventListener('ended', () => {
-                    video.currentTime = 0;
-                    video.play();
-                });
-            });
-        });
-        </script>
-        
-
 </body>
 </html>
