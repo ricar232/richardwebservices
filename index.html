@@ -5,159 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard Web Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: 'Permanent Marker', sans-serif;
-            color: #ffffff;
-            background: #121212;
-        }
-
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        #main-container {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Centra verticalmente */
-            padding: 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px; /* Espacio inferior ajustado */
-        }
-
-        h1 {
-            font-size: 4rem;
-            color: #ffffff;
-            text-shadow: 0 0 10px #000000d0, 0 0 20px #00e6e6;
-        }
-
-        #circle-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px; /* Espaciado uniforme entre los círculos */
-            padding: 20px;
-        }
-
-        .circle {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .circle img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .circle img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 230, 230, 0.8);
-        }
-
-        .circle-title {
-            margin-top: 20px;
-            font-size: 1.8rem;
-            color: #ffffff;
-            text-shadow: 0 0 5px #08e8f0b4, 0 0 10px #07d3f7;
-        }
-
-        /* Eliminar bordes de enfoque y activos */
-        .circle:focus,
-        .circle:active {
-            outline: none;
-            box-shadow: none;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            .circle img {
-                width: 140px;
-                height: 140px;
-            }
-
-            .circle-title {
-                font-size: 1.4rem;
-            }
-
-            #circle-container {
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .circle img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .circle-title {
-                font-size: 1rem;
-            }
-
-            #circle-container {
-                flex-direction: column; /* Círculos en una sola columna */
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/global.css">
 </head>
 <body>
-    <video id="video-background" autoplay muted loop>
-        <source src="assets/pagina01.mp4" type="video/mp4">
+    <!-- Background Video -->
+    <video id="video-background" autoplay muted loop preload="auto">
+        <source src="assets/pagina02.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
+
+    <!-- Main Content -->
     <div id="main-container">
         <header>
             <h1>Richard Web Services</h1>
         </header>
         <div id="circle-container">
-            <a class="circle" href="welcome.html">
+            <a class="circle" href="welcome.html" tabindex="0">
                 <img src="assets/welcome.png" alt="Welcome">
                 <div class="circle-title">Welcome</div>
             </a>
-            <a class="circle" href="about.html">
+            <a class="circle" href="about.html" tabindex="0">
                 <img src="assets/about.png" alt="About">
                 <div class="circle-title">About</div>
             </a>
-            <a class="circle" href="services.html">
+            <a class="circle" href="services.html" tabindex="0">
                 <img src="assets/services.png" alt="Services">
                 <div class="circle-title">Services</div>
             </a>
-            <a class="circle" href="projects.html">
+            <a class="circle" href="projects.html" tabindex="0">
                 <img src="assets/projects.png" alt="Projects">
                 <div class="circle-title">Projects</div>
             </a>
-            <a class="circle" href="contact.html">
+            <a class="circle" href="contact.html" tabindex="0">
                 <img src="assets/contact.png" alt="Contact">
                 <div class="circle-title">Contact</div>
             </a>

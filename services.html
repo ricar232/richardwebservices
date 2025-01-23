@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
     <style>
         /* General Styles */
         body {
@@ -15,7 +16,7 @@
             font-family: 'Permanent Marker', sans-serif;
             color: #ffffff;
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            overflow-x: hidden; /* Permite desplazamiento vertical */
+            overflow-x: hidden;
         }
 
         #video-background {
@@ -37,7 +38,19 @@
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(7px);
-            box-shadow: 0 8px 32px rgb(0, 0, 0);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         header h1 {
@@ -50,7 +63,7 @@
         header p {
             font-size: 1.5rem;
             color: #ffffff;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.973);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
         }
 
         .services-container {
@@ -61,19 +74,37 @@
         }
 
         .service-card {
-            background: rgba(0, 0, 0, 0.678);
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.932);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             padding: 20px;
             cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-in-out forwards;
+        }
+
+        .service-card:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        .service-card:nth-child(even) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .service-card:hover {
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(126, 243, 233, 0.911);
+            box-shadow: 0 8px 30px rgba(126, 243, 233, 0.9);
         }
 
         .service-card i {
@@ -86,25 +117,24 @@
             transform: scale(1.1);
         }
 
-        /* Icon Colors */
         .service-card.design i {
-            color: #4f83ff; /* Blue for Design */
+            color: #4f83ff;
         }
 
         .service-card.seo i {
-            color: #57f057; /* Green for SEO */
+            color: #57f057;
         }
 
         .service-card.cloud i {
-            color: #4fd3d3; /* Cyan for Cloud Hosting */
+            color: #4fd3d3;
         }
 
         .service-card.domain i {
-            color: #8b42d1; /* Purple for Domains */
+            color: #8b42d1;
         }
 
         .service-card.update i {
-            color: #f5d442; /* Yellow for Updates */
+            color: #f5d442;
         }
 
         .service-card h3 {
@@ -115,7 +145,7 @@
 
         .service-card p {
             font-size: 1rem;
-            color: #cff5efef;
+            color: #cff5ef;
             line-height: 1.5;
         }
 
@@ -183,7 +213,7 @@
 </head>
 <body>
     <video id="video-background" autoplay muted loop>
-        <source src="assets/pagina01.mp4" type="video/mp4">
+        <source src="assets/pagina02.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
 
@@ -194,27 +224,27 @@
         </header>
 
         <div class="services-container">
-            <div class="service-card design">
+            <div class="service-card design" tabindex="0">
                 <i class="fas fa-pencil-ruler"></i>
                 <h3>Custom Web Design</h3>
                 <p>Unique designs tailored to elevate your brand.</p>
             </div>
-            <div class="service-card seo">
+            <div class="service-card seo" tabindex="0">
                 <i class="fas fa-search"></i>
                 <h3>SEO Optimization</h3>
                 <p>Boost visibility and attract organic traffic effortlessly.</p>
             </div>
-            <div class="service-card cloud">
+            <div class="service-card cloud" tabindex="0">
                 <i class="fas fa-cloud"></i>
                 <h3>Cloud Hosting</h3>
                 <p>Reliable and scalable solutions for your online presence.</p>
             </div>
-            <div class="service-card domain">
+            <div class="service-card domain" tabindex="0">
                 <i class="fas fa-globe"></i>
                 <h3>Custom Domains</h3>
                 <p>Stand out with a unique and professional domain name.</p>
             </div>
-            <div class="service-card update">
+            <div class="service-card update" tabindex="0">
                 <i class="fas fa-sync-alt"></i>
                 <h3>Page Updates</h3>
                 <p>Keep your content fresh with regular updates.</p>

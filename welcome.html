@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
     <style>
         /* General Styles */
         body {
@@ -13,7 +14,7 @@
             font-family: 'Permanent Marker', sans-serif;
             color: #ffffff;
             background: #000000;
-            overflow-x: hidden; /* Evita desplazamiento horizontal */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         #video-background {
@@ -30,11 +31,11 @@
         .content {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.726); /* Translucent background */
+            background: rgba(0, 0, 0, 0.8); /* Translucent background */
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.979);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
             max-width: 800px;
-            margin: 50px auto; /* Centra el contenido */
+            margin: 50px auto;
             animation: fadeIn 1.5s ease-in-out;
         }
 
@@ -92,8 +93,8 @@
         }
 
         .feature-card {
-            background: rgba(0, 0, 0, 0.562);
-            border: 1px solid rgba(255, 255, 255, 0.911);
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             width: 250px;
             padding: 20px;
@@ -104,7 +105,7 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(252, 252, 252, 0.767);
+            box-shadow: 0 6px 20px rgba(252, 252, 252, 0.7);
         }
 
         .feature-card h3 {
@@ -163,8 +164,8 @@
 </head>
 <body>
     <!-- Background Video -->
-    <video id="video-background" autoplay muted loop>
-        <source src="assets/pagina01.mp4" type="video/mp4">
+    <video id="video-background" autoplay muted loop preload="auto">
+        <source src="assets/pagina02.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
 

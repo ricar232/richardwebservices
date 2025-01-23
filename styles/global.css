@@ -1,119 +1,177 @@
-/* General Styles */
+:root {
+    /* Variables de colores */
+    --primary-color: #00e6e6;
+    --secondary-color: #2cf5f5;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --highlight-color: rgba(0, 230, 230, 0.7);
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Permanent Marker', sans-serif;
-    color: #ffffff;
-    background: #121212;
+    color: var(--text-color);
+    background: var(--background-color);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
     text-align: center;
 }
 
-h1 {
-    font-size: 4rem;
-    color: #ffffff;
-    text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6;
-}
-
-p {
-    font-size: 1.5rem;
-    margin: 20px 0;
-}
-
-a {
-    font-size: 1.5rem;
-    color: #007373;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid #007373;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-a:hover {
-    background: #007373;
-    color: #ffffff;
-}
-
-/* Circle Container */
-.circle-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.circle img {
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    z-index: -1;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 40px 20px; /* Ajuste general del padding */
+    box-sizing: border-box;
+}
+
+header h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    animation: fadeIn 1.5s ease-in-out;
+    margin-top: 30px; /* Espacio desde la parte superior */
+    margin-bottom: 260px; /* Más separación del contenido inferior */
+}
+
+#circle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Espacio entre los círculos */
+    margin-top: 20px;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 170px;
+    height: 170px;
+}
+
+.circle img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.circle img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px var(--primary-color);
 }
 
 .circle-title {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #ffffff;
-    text-align: center;
+    margin-top: 15px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--primary-color);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Responsive Design */
+.circle:hover .circle-title {
+    color: var(--secondary-color);
+    text-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color);
+}
 
-/* Tablets and Small Laptops */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 3.5rem;
+.circle:focus {
+    outline: none; /* Elimina el recuadro al hacer clic */
+}
+
+/* Botón Back */
+.back-button {
+    display: inline-block;
+    margin-top: 80px; /* Incrementar espacio vertical */
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+        margin-top: 20px; /* Ajusta la separación superior */
+        margin-bottom: 100px; /* Ajusta separación para pantallas medianas */
     }
 
-    p {
-        font-size: 1.3rem;
-    }
-
-    a {
-        font-size: 1.3rem;
-        padding: 8px 16px;
+    #circle-container {
+        gap: 30px;
     }
 
     .circle {
-        width: 130px;
-        height: 130px;
+        width: 140px;
+        height: 140px;
     }
 
     .circle-title {
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .back-button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        margin-top: 40px; /* Espacio extra para pantallas medianas */
     }
 }
 
-/* Mobile Phones */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.5rem;
+        margin-top: 10px;
+        margin-bottom: 80px;
     }
 
-    p {
-        font-size: 1.2rem;
-    }
-
-    a {
-        font-size: 1.2rem;
-        padding: 8px 16px;
-    }
-
-    .circle-container {
-        gap: 15px;
+    #circle-container {
+        gap: 20px;
     }
 
     .circle {
@@ -122,36 +180,12 @@ a:hover {
     }
 
     .circle-title {
-        font-size: 0.9rem;
-    }
-}
-
-/* Small Mobile Phones */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    p {
         font-size: 1rem;
     }
 
-    a {
+    .back-button {
         font-size: 1rem;
-        padding: 6px 12px;
-    }
-
-    .circle-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .circle-title {
-        font-size: 0.8rem;
+        padding: 8px 15px;
+        margin-top: 50px; /* Más espacio desde el contenido */
     }
 }
